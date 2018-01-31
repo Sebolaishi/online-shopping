@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pick n Pay</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/bootstrap.css">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="custom.css">
+     
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12"></div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="login-page">
+            <div class="form">
+                <form class="register-form">
+                    <div class="form-group">
+                        <input type="text" ng-model="username" name="username" placeholder="Username"/>
+                     <div id="name_error" class="val_error"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" ng-model="email" name="email" placeholder="Email"/>
+                     <div id="email_error" class="val_error"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" ng-model="password" name="password" placeholder="Password"/>
+                   
+                    </div> 
+                    <div class="form-group">
+                        <input type="password" ng-model="pass_confirm" name="password_confirmation" placeholder="Confirm password"/>
+                     <div id="password_error" class="val_error"></div>
+                    </div>
+                    <input type="button" value="register"  class="btn" ng-click="insertdata()">Register</button>
+                    <p class="message">Already registered?<a href="#"> Login</a></p>
+                </form>
+                <form class="login-form">
+                    <div class="form-group">
+                    <input type="text" placeholder="Email"/>
+                    </div>  
+                    <div class="form-group">
+                    <input type="password" placeholder="Password"/>
+                    </div> 
+                   <button type="submit" value="Register" class="btn" name="register">Login</button>
+                    <p class="message">Not registered?<a href="#"> Register</a></p>
+                </form>
+            </div>
+        </div>
+                   
+            </div>
+            </div>
+        </div>
+         <script>
+             <!--form code-->
+ $('.message a').click(function(){
+ $('form').animate({height: "toggle", opacity: "toggle"}, "slow")
+    })
+    <!--form code-->
+    <!--data code-->
+    var app=angular.module('myApp',[]);
+    app.controller('cntrl', function($scope,$http){
+    $scope.insertdata=function(){
+        $http.post("insert.php",{'username':$scope.username,'email':$scope.email,'password':$scope.password})
+    .success(function(){
+    $scope.msg="Data Inserted";
+            })
+            }
+    });
+    <!--data code-->
+    
+    
+ </script>
+    </body>
+</html>
+
+ <script type="text/javascript">
+     var username = document.forms["vform"]["username"];
+     var email = document.forms["vform"]["email"];
+     var password = document.forms["vform"]["password"];
+     var password_confirmation = document.forms["vform"]["password_confirmation"];
+     
+     var name_error = document.getElementById("name_error");
+      var email_error = document.getElementById("email_error");
+       var password_error = document.getElementById("password_error");
+       
+       username.addEventListener("blur", nameVerify, true);
+       email.addEventListener("blur", emailVerify, true);
+       password.addEventListener("blur", passwordVerify, true);
+       
+       function Validate(){
+           if(username.value==""){
+               username.style.border="1px solid red";
+               name_error.textContent="Username Required";
+               username.focus();
+               return false;
+           }
+           if(email.value==""){
+               email.style.border="1px solid red";
+               email_error.textContent="Email Required";
+               email.focus();
+               return false;
+           }
+           if(password.value==""){
+               password.style.border="1px solid red";
+               password_error.textContent="password Required";
+               password.focus();
+               return false;
+           }
+            function nameVerify(){
+               if(username.value !=""){
+                  usename.style.border="1px solid #5E6E66";
+                  name_error.innerHTML ="";
+                  return true;
+               }
+           }
+           function emailVerify(){
+               if(email.value !=""){
+                  email.style.border="1px solid #5E6E66";
+                  email_error.innerHTML ="";
+                  return true;
+               }
+           }
+            function passwordVerify(){
+               if(password.value !=""){
+                  password.style.border="1px solid #5E6E66";
+                  password_error.innerHTML ="";
+                  return true;
+               }
+           }
+           
+           }
+       }
+       
+     </script>
