@@ -1,145 +1,144 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Pick n Pay</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="css/bootstrap.css">
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     <script src="js/jquery.min.js"></script>
-     <script src="js/bootstrap.min.js"></script>
+ <!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Pick n Pay</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link href="files/app.css" rel="stylesheet" />
      <link rel="stylesheet" href="custom.css">
      
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
-    
-    </head>
-    <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12"></div>
-                <div class="col-md-4 col-sm-4 col-xs-12">
-        <div class="login-page">
-            <div class="form">
-                <form class="register-form">
-                    <div class="form-group">
-                        <input type="text" ng-model="username" name="username" placeholder="Username"/>
-                     <div id="name_error" class="val_error"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" ng-model="email" name="email" placeholder="Email"/>
-                     <div id="email_error" class="val_error"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" ng-model="password" name="password" placeholder="Password"/>
-                   
-                    </div> 
-                    <div class="form-group">
-                        <input type="password" ng-model="pass_confirm" name="password_confirmation" placeholder="Confirm password"/>
-                     <div id="password_error" class="val_error"></div>
-                    </div>
-                    <input type="button" value="register"  class="btn" ng-click="insertdata()">Register</button>
-                    <p class="message">Already registered?<a href="#"> Login</a></p>
-                </form>
-                <form class="login-form">
-                    <div class="form-group">
-                    <input type="text" placeholder="Email"/>
-                    </div>  
-                    <div class="form-group">
-                    <input type="password" placeholder="Password"/>
-                    </div> 
-                   <button type="submit" value="Register" class="btn" name="register">Login</button>
-                    <p class="message">Not registered?<a href="#"> Register</a></p>
-                </form>
-            </div>
-        </div>
-                   
-            </div>
-            </div>
-        </div>
-         <script>
-             <!--form code-->
- $('.message a').click(function(){
- $('form').animate({height: "toggle", opacity: "toggle"}, "slow")
-    })
-    <!--form code-->
-    <!--data code-->
-    var app=angular.module('myApp',[]);
-    app.controller('cntrl', function($scope,$http){
-    $scope.insertdata=function(){
-        $http.post("insert.php",{'username':$scope.username,'email':$scope.email,'password':$scope.password})
-    .success(function(){
-    $scope.msg="Data Inserted";
-            })
-            }
-    });
-    <!--data code-->
-    
-    
- </script>
-    </body>
-</html>
-
- <script type="text/javascript">
-     var username = document.forms["vform"]["username"];
-     var email = document.forms["vform"]["email"];
-     var password = document.forms["vform"]["password"];
-     var password_confirmation = document.forms["vform"]["password_confirmation"];
-     
-     var name_error = document.getElementById("name_error");
-      var email_error = document.getElementById("email_error");
-       var password_error = document.getElementById("password_error");
-       
-       username.addEventListener("blur", nameVerify, true);
-       email.addEventListener("blur", emailVerify, true);
-       password.addEventListener("blur", passwordVerify, true);
-       
-       function Validate(){
-           if(username.value==""){
-               username.style.border="1px solid red";
-               name_error.textContent="Username Required";
-               username.focus();
-               return false;
-           }
-           if(email.value==""){
-               email.style.border="1px solid red";
-               email_error.textContent="Email Required";
-               email.focus();
-               return false;
-           }
-           if(password.value==""){
-               password.style.border="1px solid red";
-               password_error.textContent="password Required";
-               password.focus();
-               return false;
-           }
-            function nameVerify(){
-               if(username.value !=""){
-                  usename.style.border="1px solid #5E6E66";
-                  name_error.innerHTML ="";
-                  return true;
-               }
-           }
-           function emailVerify(){
-               if(email.value !=""){
-                  email.style.border="1px solid #5E6E66";
-                  email_error.innerHTML ="";
-                  return true;
-               }
-           }
-            function passwordVerify(){
-               if(password.value !=""){
-                  password.style.border="1px solid #5E6E66";
-                  password_error.innerHTML ="";
-                  return true;
-               }
-           }
+     <style>
+         body{
            
-           }
-       }
-       
-     </script>
+    background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/back.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+        }
+     </style>
+</head>
+<body>
+    <!--start of first navbar-->
+     <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!--start logo-->
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand"><img src="images/logo.jpg" height="80" width="110"></a>
+            </div>
+            <!--end logo-->
+            <form name="search_form_SearchBox" method="get" action="/pnpstorefront/pnp/en/search/">
+		<div class="input-group">
+			<input type="text" id="js-site-search-input"
+					class="form-control js-site-search-input" name="text" value="" data-uusecase="search"
+					maxlength="100" placeholder="I'm looking for"
+					data-options='{"autocompleteUrl" : "/pnpstorefront/pnp/en/search/autocomplete/SearchBox","minCharactersBeforeRequest" : "3","waitTimeBeforeRequest" : "500","displayProductImages" : true}'>
+			<span class="input-group-btn"> <button class="btn btn-link" type="submit">
+			<span class="glyphicon glyphicon-search"></span>
+		</button>
+	  </span>
+		
+	</form>
+            <!--start of item menu-->
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class=""><a href="#!/login">LOG OUT</a></li>
+                                    
+                </ul>
+            </div>
+            <!--end of item menu-->
+        </div>
+    </nav>
+    <!--end first navbar-->
+      <!--second navbar-->
+  <nav class="navbar navbar-default">
+	<div class="container-fluid">
+	     <div class="navbar-header">
+                <button type ="botton" class =" navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                </button>
+                
+                
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-center">
+                    <li><a href="index.html">SHOP</a></li>
+                    <li><a href="form.html">SPECIALS</a></li>
+                    <li><a href="#">RECIPES</a></li>
+                    <li><a href="#">IN-STORE CATALOGUES</a></li>
+                     <li><a href="#">CLEARANCE</a></li>
+                      <li><a href="#">BUY WATER</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><!--end of navigation bar-->
+            
+    <div class="jumbotron" style=" margin-top: 10%; margin-bottom: 10%">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+    
+ <!--start footer-->
+    <footer class="">
+        <div style="background-color: gray;">
+            <div class="container mt-5 text-center text-md-left">
+                <div class="row mt-3">
+                    <!--first column-->
+                    <div class="col-md-4 col-lg-4 col-xl-3 mb-r" style="color: whitesmoke;">
+                        <h6 class="title font-bold"><strong>Pick n Pay</strong></h6>
+                        <p><a href="#">ABOUT US</a></p>
+                         <p><a href="#">CAREERS</a></p>
+                          <p><a href="#">AWARDS</a></p>
+                           <p><a href="#">INVESTOR RELATIONS</a></p>
+                            <p><a href="#">CONTACT</a></p>
+                    </div>
+                    <!--second column-->
+                    <div class="col-md-2 col-lg-2 col-xl-2" style="color: whitesmoke;">
+                        <h6 class="title font-bold"><strong>USEFUL LINKS</strong></h6>
+                        <p><a href="#">COMPETITIONS</a></p>
+                        <p><a href="#">STORE LOCATOR</a></p>
+                        <p><a href="#">REFUNDS &  RETURNS</a></p>
+                        <p><a href="#">AMEND YOUR ORDER</a></p>
+                        <p><a href="#">BABY CLUB</a></p>
+                    </div> 
+                    <!--third column-->
+                    <div class="col-md-2 col-lg-4 col-xl-3" style="color: whitesmoke;">
+                        <h6 class="title font-bold"><strong>MORE SERVICES</strong></h6>
+                        <p><a href="#">BRAND MATCH</a></p>
+                        <p><a href="#">PNP EVENTS</a></p>
+                        <p><a href="#">CLOTHING</a></p>
+                        <p><a href="#">PICK N PAY MONEY</a></p>
+                        <p><a href="#">BOXER STORES</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--end footer-->
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="services/authentication.service.js"></script>
+    <script src="services/flash.service.js"></script>
+
+    <!-- Real user service that uses an api -->
+    <!-- <script src="app-services/user.service.js"></script> -->
+
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="services/user.service.local-storage.js"></script>
+
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="register/register.controller.js"></script>
+</body>
+</html>

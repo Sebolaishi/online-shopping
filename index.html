@@ -1,32 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html ng-app="app">
 <head>
+    <meta charset="utf-8" />
     <title>Pick n Pay</title>
-    
-     <link rel="stylesheet" href="css/bootstrap.css">
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     <script src="js/jquery.min.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <style>
-        .navbar{
-            margin-bottom: 50px;
-        }
-        footer{
-            margin-top: 40px;
-        }
-    </style>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link href="files/app.css" rel="stylesheet" />
+     <link rel="stylesheet" href="custom.css">
+     <link href="ca rousel.css" rel="stylesheet">
+     <style>
+         body{
+             background-color: white;
+         }
+     </style>
+</head>
 <body>
-    <nav class="navbar navbar-inverse">
+    <!--start of first navbar-->
+     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <!--start logo-->
             <div class="navbar-header">
-                <a href="index.html" class="navbar-brand"><img src="images/pnp.png" height="80" width="110"></a>
+                <a href="index.html" class="navbar-brand"><img src="images/logo.jpg" height="80" width="110"></a>
             </div>
             <!--end logo-->
             <form name="search_form_SearchBox" method="get" action="/pnpstorefront/pnp/en/search/">
@@ -44,64 +37,114 @@
             <!--start of item menu-->
             <div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class=""><a href="login.html">LOG IN</a></li>
-                                    
+                    <li class=""><a href="cart.html">Shop online</a></li>
+                    <li class=""><a href="login.html">SIGN UP</a></li>                                    
                 </ul>
             </div>
             <!--end of item menu-->
         </div>
-    </nav>
-    <!--second navbar-->
-    <nav>
-    <li class=" auto">
-
-			<a href="/pnpstorefront/pnp/en/pnpbase/c/pnpbase?q=%3Arelevance%3AisOnPromotion%3AOn+Promotion&text=&pageSize=18#"  title="SPECIALS" >SPECIALS</a></li>
-<li class=" auto">
-
-			<a href="/pnpstorefront/pnp/en/all-recipes"  title="RECIPES" >RECIPES</a></li>
-<li class=" auto">
-
-			<a href="/pnpstorefront/pnp/en/catalogues"  title="IN-STORE CATALOGUES" >IN-STORE CATALOGUES</a></li>
-<li class=" auto">
-
-			<a href="/pnpstorefront/pnp/en/c/christmas-clearance724297723?q=%3Arelevance%3AisOnPromotion%3AOn+Promotion&text=&pageSize=18#"  title="CLEARANCE" >CLEARANCE</a></li>
-</ul>
-            </nav>
-            <!--end navbar-->
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="carousel slide" id="sm-toto">
-                    <ul class="carousel-indicators">
-                        <li data-target="#sm-toto" data-slide-to="0" class="active"></li>
-                        <li data-target="#sm-toto" data-slide-to="1"></li>
-                        <li data-target="#sm-toto" data-slide-to="2"></li>
-                    </ul>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="images/mango.jpg" alt="picture1">
-                        </div>
-                        <div class="item">
-                            <img src="images/food.jpg" alt="picture2">
-                        </div>
-                        <div class="item">
-                            <img src="images/apple.jpg" alt="picture3">
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="sm-toto" role="button" data-slide="prev">
-                        <span class="glyphion glyphion-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                     <a class="right carousel-control" href="sm-toto" role="button" data-slide="next">
-                        <span class="glyphion glyphion-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
+    </nav><br>
+    <!--end first navbar-->
+      <!--second navbar-->
+       <div class="container">
+    <div class="row">
+        <nav class="navbar" style=" background-color: white">
+	<div class="container-fluid">
+	     <div class="navbar-header">
+                <button type ="botton" class =" navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                </button>
+                
+                
             </div>
-        </div>        
+           
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">SHOP</a></li>
+                    <li><a href="form.html">SPECIALS</a></li>
+                    <li><a href="#">RECIPES</a></li>
+                    <li><a href="#">IN-STORE CATALOGUES</a></li>
+                     <li><a href="#">CLEARANCE</a></li>
+                      <li><a href="#">BUY WATER</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     </div>
-    <!--start footer-->
-    <footer class="">
+       </div>
+           <!--end of navigation bar-->
+    
+     <!-- Carousel
+    ================================================== -->
+     <div class="container" style=" margin-top: 2%">
+    <div class="row">
+        <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="images/ban1.jpg" alt="First slide">
+          <div class="container">
+            
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="images/ba1.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="images/ban2.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+            </div>
+    </div>
+     </div>
+                <!-- /.carousel -->
+
+            
+    <!--<div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>-->
+    
+ <!--start footer-->
+ <footer class="" style=" margin-top: 50%">
         <div style="background-color: gray;">
             <div class="container mt-5 text-center text-md-left">
                 <div class="row mt-3">
@@ -137,8 +180,23 @@
         </div>
     </footer>
     <!--end footer-->
-   
-    
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="services/authentication.service.js"></script>
+    <script src="services/flash.service.js"></script>
+
+    <!-- Real user service that uses an api -->
+    <!-- <script src="app-services/user.service.js"></script> -->
+
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="services/user.service.local-storage.js"></script>
+
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="login/register.controller.js"></script>
 </body>
 </html>
-

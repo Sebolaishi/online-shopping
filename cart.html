@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    
+    <style>
+        h3{
+            font-size: 10;
+        }
+        h5{
+            color: black;
+            font-weight: bold;
+        }
+        </style>
+    </head>
+    <body>
+          <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!--start logo-->
+            <div class="navbar-header">
+                <a href="Shopphing cart.html" class="navbar-brand"><img src="images/logo.jpg" height="80" width="110"></a>
+            </div>
+            <!--end logo-->
+            <form name="search_form_SearchBox" method="get" action="/pnpstorefront/pnp/en/search/">
+		<div class="input-group">
+			<input type="text" id="js-site-search-input"
+					class="form-control js-site-search-input" name="text" value="" data-uusecase="search"
+					maxlength="100" placeholder="I'm looking for"
+					data-options='{"autocompleteUrl" : "/pnpstorefront/pnp/en/search/autocomplete/SearchBox","minCharactersBeforeRequest" : "3","waitTimeBeforeRequest" : "500","displayProductImages" : true}'>
+			<span class="input-group-btn"> <button class="btn btn-link" type="submit">
+			<span class="glyphicon glyphicon-search"></span>
+		</button>
+	  </span>
+		
+	</form>
+            <!--start of item menu-->
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class=""><a href="login.html">LOG IN</a></li>
+                                    
+                </ul>
+            </div>
+            <!--end of item menu-->
+        </div>
+    </nav>
+    <!--end first navbar-->
+      <!--second navbar-->
+  <nav class="navbar navbar-default">
+	<div class="container-fluid">
+	     <div class="navbar-header">
+                <button type ="botton" class =" navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                </button>
+                
+                
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-center">
+                    <li><a href="Shopphing cart.html">SHOP</a></li>
+                    <li><a href="form.html">SPECIALS</a></li>
+                    <li><a href="#">RECIPES</a></li>
+                    <li><a href="#">IN-STORE CATALOGUES</a></li>
+                     <li><a href="#">CLEARANCE</a></li>
+                      <li><a href="#">BUY WATER</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><!--end of navigation bar-->
+        
+
+        <div class="container">
+            <div class="container" style=" background-color: #00cc99;">
+            <h3>This weeks top offers</h3>
+            </div>
+            <div class="container" style=" margin-top: 2%; background-color: #cccccc">
+            <h4>Grocery</h4>
+            </div>
+            <div class="row" style=" margin-top: 3%;" >
+        
+            <div class="col-sm-4" style=" text-align: center">
+                <a class="add-to-cart" href="#" data-name="Apple" data-price="10.22"><img src="images/apple.jpg"><div>Apple R10.22</div></a>
+            </div>                          
+            
+                <div class="col-sm-4" style=" text-align: center">
+                <a class="add-to-cart" href="#" data-name="Spagathi" data-price="11.22"><img src="images/food.jpg"><div>      Spagathi R11.22</div></a>
+            </div>
+                 <div class="col-sm-4" style=" text-align: center">
+                <a class="add-to-cart" href="#" data-name="Wine" data-price="90.99"><img src="images/wine.jpg"><div>      Wine R90.99</div></a>
+            </div>
+                
+           
+            </div>
+            <div class="row">
+                
+                <div class="container" style=" margin-top: 4%; background-color: #cccccc">               
+            <h4>Body Products</h4>               
+            </div >
+            <div style="  margin-top: 3%">
+                 <div class="col-sm-4" style=" text-align: center;">
+                <a class="add-to-cart" href="#" data-name="Shampoo" data-price="49.90"><img src="images/shampoo.jpg"><div>      Shampoo R49.90</div></a>
+            </div>
+                 <div class="col-sm-4" style=" text-align: center">
+                <a class="add-to-cart" href="#" data-name="Deodorent" data-price="19.22"><img src="images/deodorent.jpg"><div>      Deodorent R19.50</div></a>
+            </div>
+                 <div class="col-sm-4" style=" text-align: center">
+                <a class="add-to-cart" href="#" data-name="Body Lotion" data-price="30.50"><img src="images/body.jpg"><div>      Body Lotion R30.50</div></a>
+            </div>
+            </div>
+        </div>
+            </div>
+            
+        </div>
+        <div>
+            
+            
+            
+        </div>
+
+              <div class="container" style=" margin-top: 5%; background-color: #cccccc">
+                  <div class="row">
+                      
+                      <div class="col-sm-3"></div>
+                      <div class="col-sm-5" style=" margin-bottom: 3%">
+                           <div style=" text-align: center;">
+                           <h5>Shopping List</h5>
+                           </div>
+             <div style="margin-top: 5%">
+            <ul id="show-cart">
+                <li>???????</li>
+            </ul>
+                  <div  style=" margin-top: 4%; text-align: center">
+            <div>You have <span id="count-cart">X</span> items in your cart</div>
+            <div>Total Cost : R<span id="total-cart"></span></div>
+            <div>
+            <button id="clear-cart">Clear Cart</button>
+            <button id="clear-cart"><a href="login.html">Purchase</a></button>
+            </div>
+                  </div>
+             </div>
+                      </div>
+                      
+              </div>
+                   
+              </div>
+              
+
+
+
+        <script src="js/shoppingCart.js"></script>
+
+        <script>
+
+            $(".add-to-cart").click(function(event){
+                event.preventDefault();
+                var name = $(this).attr("data-name");
+                var price = Number($(this).attr("data-price"));
+
+                shoppingCart.addItemToCart(name, price, 1);
+                displayCart();
+            });
+
+            $("#clear-cart").click(function(event){
+                shoppingCart.clearCart();
+                displayCart();
+            });
+
+            function displayCart() {
+                var cartArray = shoppingCart.listCart();
+                console.log(cartArray);
+                var output = "";
+
+                for (var i in cartArray) {
+                    output += ""
+                        +cartArray[i].name
+                        +" <input class='item-count' type='number' data-name='"
+                        +cartArray[i].name
+                        +"' value='"+cartArray[i].count+"' >"
+                       
+                        +" <button class='plus-item' data-name='"
+                        +cartArray[i].name+"'>Add</button>"
+                        +" <button class='subtract-item' data-name='"
+                        +cartArray[i].name+"'>Subtract</button>"
+                        +" <button class='delete-item' data-name='"
+                        +cartArray[i].name+"'>Cancel</button>"
+                        +"";
+                }
+
+                $("#show-cart").html(output);
+                $("#count-cart").html( shoppingCart.countCart() );
+                $("#total-cart").html( shoppingCart.totalCart() );
+            }
+
+            $("#show-cart").on("click", ".delete-item", function(event){
+                var name = $(this).attr("data-name");
+                shoppingCart.removeItemFromCartAll(name);
+                displayCart();
+            });
+
+            $("#show-cart").on("click", ".subtract-item", function(event){
+                var name = $(this).attr("data-name");
+                shoppingCart.removeItemFromCart(name);
+                displayCart();
+            });
+
+            $("#show-cart").on("click", ".plus-item", function(event){
+                var name = $(this).attr("data-name");
+                shoppingCart.addItemToCart(name, 0, 1);
+                displayCart();
+            });
+
+            $("#show-cart").on("change", ".item-count", function(event){
+                var name = $(this).attr("data-name");
+                var count = Number($(this).val());
+                shoppingCart.setCountForItem(name, count);
+                displayCart();
+            });
+
+
+            displayCart();
+
+        </script>
+       
+        
+           
+ <!--start footer-->
+ <footer class="" style="margin-top: 10%">
+        <div style="background-color: gray;">
+            <div class="container mt-5 text-center text-md-left">
+                <div class="row mt-3">
+                    <!--first column-->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mb-r" style="color: whitesmoke;">
+                        <h6 class="title font-bold"><strong>Pick n Pay</strong></h6>
+                        <p><a href="#|">ABOUT US</a></p>
+                         <p><a href="#|">CAREERS</a></p>
+                          <p><a href="#|">AWARDS</a></p>
+                           <p><a href="#|">INVESTOR RELATIONS</a></p>
+                            <p><a href="#|">CONTACT</a></p>
+                    </div>
+                    <!--second column-->
+                    <div class="col-md-2 col-lg-2 col-xl-2" style="color: whitesmoke;">
+                        <h6 class="title font-bold"><strong>USEFUL LINKS</strong></h6>
+                        <p><a href="#|">COMPETITIONS</a></p>
+                        <p><a href="#|">STORE LOCATOR</a></p>
+                        <p><a href="#|">REFUNDS &  RETURNS</a></p>
+                        <p><a href="#|">AMEND YOUR ORDER</a></p>
+                        <p><a href="#|">BABY CLUB</a></p>
+                    </div> 
+                    <!--third column-->
+                    <div class="col-md-2 col-lg-4 col-xl-3" style="color: whitesmoke;">
+                        <h6 class="title font-bold"><strong>MORE SERVICES</strong></h6>
+                        <p><a href="#|">BRAND MATCH</a></p>
+                        <p><a href="#|">PNP EVENTS</a></p>
+                        <p><a href="#|">CLOTHING</a></p>
+                        <p><a href="#|">PICK N PAY MONEY</a></p>
+                        <p><a href="#|">BOXER STORES</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--end footer-->
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="services/authentication.service.js"></script>
+    <script src="services/flash.service.js"></script>
+
+    <!-- Real user service that uses an api -->
+    <!-- <script src="app-services/user.service.js"></script> -->
+
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="services/user.service.local-storage.js"></script>
+
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="login/register.controller.js"></script>
+    </body>
+</html>
+
+
+
+
